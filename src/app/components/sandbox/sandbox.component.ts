@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import {Customer} from '../Customer';
 @Component({
   selector: 'sandbox',
-  
+  templateUrl: './sandbox.component.html'
   /*template output note the backwards singlequotes
   this can alos be a html template file*/  
+  /*
   template:  `<h1> hello {{name}} {{age}} </h1>
   <h2> my name is {{person.firstName}} </h2>
   <hr>
@@ -13,6 +14,7 @@ import {Customer} from '../Customer';
     <li>{{showAge()}} </li>
   <ul>
   `
+  */
 
 })
 export class SandboxComponent {
