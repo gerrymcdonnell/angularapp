@@ -98,3 +98,57 @@ if statement example
     <input type="text" (keyup)="changeText($event)" placeholder="change text" value={{text}}>
 </div>
 <h2>{{ text }}</h2>
+
+
+
+<hr>vid 30
+<h3>binding and NG Model</h3>
+
+<div class="container">
+<form>
+    <div class="form-group">
+        <label> Name</label>
+        <!-- notes 
+            1. the name atrribute must be used as well            
+            2. the [()] denotes 2 way binding!
+        -->
+        <input type="text" [(ngModel)]="name3" name="name3" class="form-control">
+    </div>
+
+    <div class="form-group">
+            <label> Age</label>
+            <input type="number" name="age3" [(ngModel)]="age3" class="form-control">
+   </div>
+
+   <input type="submit" value="submit" class="btn btn-success">
+</form>
+<p></p>
+<h4>Name: {{name3}}     </h4>
+<h4>Age: {{age3}}       </h4>
+</div>
+
+
+
+
+<hr>
+<hr>vid 31
+<h3>binding and NG Model</h3>
+
+<form (submit)="onSubmit()">
+        <div class="form-group">
+            <label> Name</label>
+            <!-- notes 
+                1. the name atrribute must be used as well            
+                2. the [()] denotes 2 way binding!
+            -->
+            <input type="text" [(ngModel)]="name" name="name" class="form-control">
+        </div>    
+   
+       <input type="submit" value="Submit New User" class="btn btn-success">
+</form>
+<hr>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of users">
+        {{user}}
+    </li>
+</ul>

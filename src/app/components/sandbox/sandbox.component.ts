@@ -29,13 +29,13 @@ import { elementDef } from '@angular/core/src/view/element';
 })
 export class SandboxComponent {
     //properties
-    name='john doe';
+    name='';
 
     //cast property to string
     name2:string='john doe2';
     
     //number type
-    age:number=36;
+    age:number=0;
 
     //boolean
     hasChildren:boolean=true;
@@ -80,6 +80,12 @@ export class SandboxComponent {
     total=500;
 
 
+    //2way binding ng model
+    name3:string='im name 3';    
+    age3:number=3;
+
+    //forms
+    users:string[]=['John','Paddy','mary'];
     
 
     //default constrctor
@@ -149,6 +155,12 @@ export class SandboxComponent {
 
     changeText(e){
         this.text=e.target.value;
+    }
+
+    //submit
+    
+    onSubmit(){
+        this.users.push(this.name);
     }
 
 }
