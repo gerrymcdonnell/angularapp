@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {Customer} from '../Customer';
 import { elementClass } from '@angular/core/src/render3/instructions';
 import { elementDef } from '@angular/core/src/view/element';
+import {DataService} from '../../services/data.service';
+
 @Component({
   selector: 'sandbox',  
   //url template file
@@ -96,7 +98,8 @@ export class SandboxComponent {
     
 
     //default constrctor
-    constructor(){
+    //Service must be added to component constructor
+    constructor(public dataService:DataService){
         console.log('Contructor ran!');
 
         this.age=99;
@@ -132,8 +135,11 @@ export class SandboxComponent {
                 showName:false
             },
         ]
+
+        //use data service
+        console.log(this.dataService.getUsers);
         
-    }
+    }//end constructor
 
     //custom method
     hasBirthDay(){

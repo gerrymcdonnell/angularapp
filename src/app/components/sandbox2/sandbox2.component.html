@@ -1,0 +1,33 @@
+<!-- template file -->
+<h1 class="special"> hello from sandbox 2 html file </h1>
+
+<h2>1. List of Users</h2>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let user of users">        
+        {{user}}
+    </li>
+</ul>
+<p></p>
+
+
+<hr>
+<h2>2. Data</h2>
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let d of data">        
+        {{d}}
+    </li>
+</ul>
+
+<hr>
+<h2>3. HTTP Remote GET</h2>
+via; http://jsonplaceholder.typicode.com/users
+<div *ngFor="let user of users">
+        <div class="well">
+            <ul class="list-group">
+                <li class="list-group-item">Name: {{ user.name }}</li>
+                <li class="list-group-item">Email: {{ user.email }}</li>
+                <li class="list-group-item">Phone: {{ user.phone }}</li>
+            </ul>
+            <br>
+        </div>
+    </div>
