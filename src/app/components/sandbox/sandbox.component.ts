@@ -62,6 +62,9 @@ export class SandboxComponent {
     //object
     person={firstName:'Steve',lastname:'Smith'};
 
+    //vid [20] array of ppl
+    people=['Rick','carl','ted'];
+
     //default constrctor
     constructor(){
         console.log('Contructor ran!');

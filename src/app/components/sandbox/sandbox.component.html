@@ -1,1 +1,22 @@
+<!-- template file -->
 <h1 class="special"> hello from html file </h1>
+
+heres the contents of the people array
+<h1 class="special"> {{people}} </h1>
+
+<hr>
+Loop example
+<ul>
+    <li *ngFor="let person of people; let i=index">
+        {{i}} {{person}}
+    </li>
+</ul>
+
+
+<hr>
+Loop example2 class of customers
+<ul>
+    <li *ngFor="let c of customers">
+        {{c.id}} : {{c.name}}   {{c.id}}
+    </li>
+</ul>
