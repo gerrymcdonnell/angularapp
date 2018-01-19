@@ -6,8 +6,10 @@ import {Customer} from '../Customer';
   templateUrl: './sandbox.component.html',
   
   //inline style back ticks
-  styles: ['.special{color:green;}']
-    
+  //styles: ['.special{color:green;}']
+  
+  //styles file
+  styleUrls:['./sandbox.component.css']
 
   /*template output note the backwards singlequotes
   this can alos be a html template file*/  
