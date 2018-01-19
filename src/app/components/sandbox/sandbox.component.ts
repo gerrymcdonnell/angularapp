@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {Customer} from '../Customer';
+import { elementClass } from '@angular/core/src/render3/instructions';
+import { elementDef } from '@angular/core/src/view/element';
 @Component({
   selector: 'sandbox',  
   //url template file
@@ -73,6 +75,10 @@ export class SandboxComponent {
     isSpecial=true;
     canSave=true;
 
+    //pipes
+    birthday=new Date(1983,1,15);
+    total=500;
+
 
     
 
@@ -124,5 +130,26 @@ export class SandboxComponent {
     showAge(){
         return this.age;
     }
+
+    //events
+    fireEvent(e){
+        //console.log("fire event");
+        //console.log(greeting);
+        console.log(e.type);
+    }
+
+    text:string="hello world";
+    value:boolean=true;
+
+    changeValue(){
+        /*this.text='FAIRWELL WORLD';
+        this.value=false;*/
+        this.value=!this.value;        
+    }
+
+    changeText(e){
+        this.text=e.target.value;
+    }
+
 }
 

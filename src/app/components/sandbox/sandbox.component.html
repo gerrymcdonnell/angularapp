@@ -21,22 +21,17 @@ Loop example2 class of customers
     </li>
 </ul>
 
-<hr>
-FIX ME Broken! Loop example2 class of customers using if
-<ul>
-    <li *ngFor="let c of customers">
-        <span *ngIf="showName">{{c.name}}</span>        
-    </li>
-</ul>
 
+<!-- binding examples-->
+<!--
 <hr>
 binding
 imageurl={{imageUrl}}
 <div>
     <img src="{{imageUrl}}">    
 </div>
-
 <hr>
+-->
 
 <!--
 Another way to write it "<img [src]="imageUrl">"  
@@ -61,3 +56,45 @@ create post
 The class styler changes based on the value of isSpecial
 <h4 [class.special]="isSpecial">This class binding!</h4>
 
+<hr>Style binding
+<div [style.font-size]="isSpecial ? 'x-large' : 'smaller' ">Font size depends on var</div>
+
+<hr>
+<hr>Pipes examples
+<p>{{birthday | date}}</p>
+<p>{{birthday | date:"MM-dd-yyyy"}}</p>
+<p>{{'cake' | uppercase}}</p>
+<p>{{total | currency:"GBP":"2"}}</p>
+
+<hr>
+<h3>Events</h3>
+<button id="btn1" (click)="fireEvent('hello')">Click event</button>
+<p>double click not working</p>
+<button id="btn2" (dbllick)="fireEvent($event)">DblClick event</button>
+
+<hr>changing properties
+<h3>Events</h3>
+<h1>hello world</h1>
+<button (click)="changeValue()">Change Value</button>
+<h1>{{text}}</h1>
+
+if statement example
+<div *ngIf="value">
+    <h1>{{text}}</h1>
+</div>
+
+
+<hr>
+<h3>Forms and keyboard Events</h3>
+<div>
+    <input type="text" (keyup)="fireEvent($event)" placeholder="keyup event">
+</div>
+
+<div>
+    <input type="text" (keydown)="fireEvent($event)" placeholder="keydown event">
+</div>
+<p>Bind the input</p>
+<div>
+    <input type="text" (keyup)="changeText($event)" placeholder="change text" value={{text}}>
+</div>
+<h2>{{ text }}</h2>
