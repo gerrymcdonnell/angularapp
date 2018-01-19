@@ -20,3 +20,44 @@ Loop example2 class of customers
         {{c.id}} : {{c.name}}   {{c.id}}
     </li>
 </ul>
+
+<hr>
+FIX ME Broken! Loop example2 class of customers using if
+<ul>
+    <li *ngFor="let c of customers">
+        <span *ngIf="showName">{{c.name}}</span>        
+    </li>
+</ul>
+
+<hr>
+binding
+imageurl={{imageUrl}}
+<div>
+    <img src="{{imageUrl}}">    
+</div>
+
+<hr>
+
+<!--
+Another way to write it "<img [src]="imageUrl">"  
+<div>
+    <img [src]="imageUrl">    
+</div>
+-->
+
+<!--
+Another way to write it "<img bind-src="imageUrl">"
+<div>
+    <img bind-src="imageUrl">    
+</div>
+-->
+
+<hr>
+create post
+<p [hidden]="isUnchanged"> The post has been changed</p>
+<button [disabled]="isUnchanged">Save</button>
+
+<hr>
+The class styler changes based on the value of isSpecial
+<h4 [class.special]="isSpecial">This class binding!</h4>
+

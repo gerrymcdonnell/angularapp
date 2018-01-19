@@ -65,6 +65,17 @@ export class SandboxComponent {
     //vid [20] array of ppl
     people=['Rick','carl','ted'];
 
+
+    imageUrl='http://www.lorempixel.com/400/200';
+    isUnchanged:boolean=false;
+
+    //class binding
+    isSpecial=true;
+    canSave=true;
+
+
+    
+
     //default constrctor
     constructor(){
         console.log('Contructor ran!');
@@ -77,7 +88,8 @@ export class SandboxComponent {
         this.customer={
             id:1,
             name:'ted',
-            email:'john@ted.com'
+            email:'john@ted.com',
+            showName:true
         }
 
         //init array of customers
@@ -85,12 +97,20 @@ export class SandboxComponent {
             {
                 id:1,
                 name:'ted',
-                email:'john@ted.com'
+                email:'john@ted.com',
+                showName:true
             },
             {
                 id:2,
                 name:'ted2',
-                email:'john2@ted.com'
+                email:'john2@ted.com',
+                showName:true
+            },
+            {
+                id:3,
+                name:'ted3',
+                email:'john3@ted.com',
+                showName:false
             },
         ]
         
