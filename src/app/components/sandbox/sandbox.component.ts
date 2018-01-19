@@ -86,6 +86,13 @@ export class SandboxComponent {
 
     //forms
     users:string[]=['John','Paddy','mary'];
+
+    //vid 32
+    user={
+        name:'',
+        email:'',
+        phone:0
+    }
     
 
     //default constrctor
@@ -157,10 +164,19 @@ export class SandboxComponent {
         this.text=e.target.value;
     }
 
-    //submit
-    
+    //submit    
     onSubmit(){
         this.users.push(this.name);
+    }
+
+
+    onSubmit2({value,valid}){
+        if(valid){
+            console.log(value);
+        }
+        else{
+            console.log('Form is invalid');
+        }
     }
 
 }
