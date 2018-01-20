@@ -16,13 +16,15 @@ import { DataService } from './services/data.service';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 //create routes for app
 const appRoutes:Routes=[
   {path:'',component:HomeComponent},
   {path:'about',component:AboutComponent},
   {path:'sandbox1',component:SandboxComponent},
-  {path:'sandbox2',component:SandboxComponent2}
+  {path:'sandbox2',component:SandboxComponent2},
+  {path:'user/:id',component:UserDetailsComponent}
 ]
 
 @NgModule({
@@ -33,7 +35,8 @@ const appRoutes:Routes=[
     SandboxComponent2,
     HomeComponent,
     AboutComponent,
-    NavbarComponent
+    NavbarComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
