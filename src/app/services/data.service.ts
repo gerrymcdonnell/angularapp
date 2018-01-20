@@ -85,6 +85,10 @@ export class DataService{
         .map(res=>res.json());
     }
 
+    updateUser(id){
+        return this.http.put('http://jsonplaceholder.typicode.com/users/'+user.id,user)
+        .map(res=>res.json());
+    }
 
-
+    
 }

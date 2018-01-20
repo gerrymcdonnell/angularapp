@@ -22,10 +22,14 @@ export class SandboxComponent2 {
     data:any[]=[];
 
     user={
+        id:'',
         name:'',
         email:'',
         phone:''
     }
+
+    //is it an edit or a new
+    isEdit:boolean=false;
 
     //default constrctor
     //Service must be added to component constructor
@@ -54,11 +58,32 @@ export class SandboxComponent2 {
         
     }//end constructor
 
-    onSubmit(){
-        this.dataService.addUser(this.user).subscribe(user=>{
-            this.users.unshift();
-            console.log(user);
-        })
+    onSubmit(isEdit){
+        
+        if(isEdit){
+            //edit user
+            this.dataService.updateUser(this.user).subscribe(user=>{
+                
+                for(let i=0;i<this.users.length;i++){
+                    if(this.users[i].id==this.user.id){
+                        //splice removes elements from an array
+                        this.users.splice(i,1);
+                    }
+                }
+                this.users.unshift();
+
+            })
+        }
+        else{
+            //its an add user
+            this.dataService.addUser(this.user).subscribe(user=>{
+                this.users.unshift();
+                console.log(user);
+            })
+        }
+        
+        
+
     }
 
 
@@ -75,6 +100,11 @@ export class SandboxComponent2 {
             }
 
         })
+    }
+
+    onEditClick(user){
+        this.isEdit=true;
+        this.user=user;
     }
 
    
