@@ -30,4 +30,39 @@ via; http://jsonplaceholder.typicode.com/users
             </ul>
             <br>
         </div>
+</div>
+
+<!--
+<hr>
+<h2>3. HTTP Remote GET</h2>
+via; localhost/cakerestapi/words.json
+<div *ngFor="let word of words">
+        <div class="well">
+            <ul class="list-group">
+                
+                <li class="list-group-item">id: {{ word.id }}</li>
+                <li class="list-group-item">word: {{ word.word }}</li>
+
+            </ul>
+            <br>
+        </div>
+</div>
+-->
+
+<hr>
+<h2>POST Example</h2>
+<form (submit)="onSubmit()">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" [(ngModel)]="user.name" name="name">
     </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" [(ngModel)]="user.email" name="email">
+    </div>
+    <div class="form-group">
+        <label>Phone</label>
+        <input type="text" class="form-control" [(ngModel)]="user.phone" name="phone">
+    </div>
+    <input type="submit" class="btn btn-success" value="Submit">
+</form>

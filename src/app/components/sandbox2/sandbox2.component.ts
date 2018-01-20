@@ -16,9 +16,16 @@ export class SandboxComponent2 {
     
     //users array
     users:any[];
+    words:any[];
 
     //empty array
     data:any[]=[];
+
+    user={
+        name:'',
+        email:'',
+        phone:''
+    }
 
     //default constrctor
     //Service must be added to component constructor
@@ -28,14 +35,31 @@ export class SandboxComponent2 {
         //console.log(users);
         
         //use data service
-        //this.users=this.dataService.getUsers();
-
         this.dataService.getUsers().subscribe(users=>{
-
             this.users=users;
         })
+
+
+        //cross origin problem needs a header
+        /*this.dataService.getWords().subscribe(words=>{
+            this.words=words;
+            console.log(words);
+        })*/
+
+
+        //auth
+        /*this.dataService.getWordswithAuth().subscribe(words=>{
+            this.words=words;
+        })*/
         
     }//end constructor
+
+    onSubmit(){
+        this.dataService.addUser(this.user).subscribe(user=>{
+            this.users.unshift();
+            console.log(user);
+        })
+    }
 
    
 

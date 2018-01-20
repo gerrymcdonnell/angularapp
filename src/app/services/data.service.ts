@@ -30,6 +30,23 @@ export class DataService{
         .map(res=>res.json());
     }
 
+
+    //http://localhost/speechapp/rest_words/index.json
+    //cross origin problem!
+    getWords(){
+        return this.http.get('http://127.0.0.1/speechapp/rest_words/index.json').map(res=>res.json());
+    }
+
+
+
+
+    //http://localhost/cake3restapi/words.json
+    //requires an auth header with login details
+    getWordswithAuth(){
+        return this.http.get('http://localhost/cake3restapi/words.json')
+        .map(res=>res.json());
+    }
+
     //can ignore the errors in VS Studio below
     /*getData(){
         this.data = new Observable(observer => {
@@ -56,5 +73,11 @@ export class DataService{
 
         return this.data;
     }*/
+
+
+    addUser(user){
+        return this.http.post('http://jsonplaceholder.typicode.com/users',user)
+        .map(res=>res.json());
+    }
 
 }
