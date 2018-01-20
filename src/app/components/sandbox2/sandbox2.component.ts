@@ -61,6 +61,22 @@ export class SandboxComponent2 {
         })
     }
 
+
+    onDeleteClick(id){
+        this.dataService.deleteUser(id).subscribe(res=>{
+            console.log(res);
+            
+            //loop all users and find the one we just deleted
+            for(let i=0;i<this.users.length;i++){
+                if(this.users[i].id==id){
+                    //splice removes elements from an array
+                    this.users.splice(i,1);
+                }
+            }
+
+        })
+    }
+
    
 
 }

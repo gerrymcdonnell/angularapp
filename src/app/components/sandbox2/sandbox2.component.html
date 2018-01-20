@@ -29,6 +29,8 @@ via; http://jsonplaceholder.typicode.com/users
                 <li class="list-group-item">Phone: {{ user.phone }}</li>
             </ul>
             <br>
+            <button class="btn btn-danger btn-sm" (click)="onDeleteClick(user.id)">delete</button>
+            <br> <br>
         </div>
 </div>
 
