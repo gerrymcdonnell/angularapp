@@ -14,7 +14,7 @@ import {Http} from '@angular/http';
 
 @Injectable()
 export class DataService{
-    //users:string[];
+    users:string[];
 
 
     //data: Observable<Array<number>>;
@@ -34,7 +34,7 @@ export class DataService{
     //http://localhost/speechapp/rest_words/index.json
     //cross origin problem!
     getWords(){
-        return this.http.get('http://127.0.0.1/speechapp/rest_words/index.json').map(res=>res.json());
+        return this.http.get('http://speechapp.irishbloke.net/rest_exercises/index.json').map(res=>res.json());
     }
 
 
@@ -75,7 +75,7 @@ export class DataService{
     }*/
 
 
-    addUser(user){
+    /*addUser(user){
         return this.http.post('http://jsonplaceholder.typicode.com/users',user)
         .map(res=>res.json());
     }
@@ -88,7 +88,7 @@ export class DataService{
     updateUser(id){
         return this.http.put('http://jsonplaceholder.typicode.com/users/'+user.id,user)
         .map(res=>res.json());
-    }
+    }*/
 
     
 }
