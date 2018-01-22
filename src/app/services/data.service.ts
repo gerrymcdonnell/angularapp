@@ -75,7 +75,7 @@ export class DataService{
     }*/
 
 
-    /*addUser(user){
+    addUser(user){
         return this.http.post('http://jsonplaceholder.typicode.com/users',user)
         .map(res=>res.json());
     }
@@ -85,10 +85,11 @@ export class DataService{
         .map(res=>res.json());
     }
 
-    updateUser(id){
-        return this.http.put('http://jsonplaceholder.typicode.com/users/'+user.id,user)
-        .map(res=>res.json());
-    }*/
+    //broke
+    updateUser(user){
+        return this.http.put('http://jsonplaceholder.typicode.com/users/'+user.id, user)
+            .map(res => res.json());
+    }
 
     
 }
