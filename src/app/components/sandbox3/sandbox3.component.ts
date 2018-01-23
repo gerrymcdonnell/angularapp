@@ -32,8 +32,8 @@ export class Sandbox3Component {
         
         //use data service
         this.dataService.getWords().subscribe(words=>{
-            this.words=words.words;
-            console.log(words.words);
+            this.words=words;
+            console.log(this.words);
         })
 
 

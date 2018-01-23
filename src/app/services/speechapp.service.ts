@@ -28,7 +28,7 @@ export class SpeechAppService{
         //return this.http.get('http://localhost/cake3restapi/words.json').map(res=>res.json());
 
         //remote
-         return this.http.get('http://speechapp.irishbloke.net/rest_words/index.json').map(res=>res.json());        
+         return this.http.get('http://localhost/cake3restapi/words.json').map(res=>res.json());        
     }
 
     //http://localhost/cake3restapi/words.json

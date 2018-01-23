@@ -60,17 +60,24 @@ export class SandboxComponent2 {
 
     onSubmit(isEdit){
         
+        console.log("isEdit=" +isEdit);
+
         if(isEdit){
-            //edit user
+            //edit user           
+
             this.dataService.updateUser(this.user).subscribe(user=>{
                 
+                console.log("calling updateUser()");
+
+                //look for the one we edited and add new one back
                 for(let i=0;i<this.users.length;i++){
                     if(this.users[i].id==this.user.id){
                         //splice removes elements from an array
                         this.users.splice(i,1);
+                        console.log("doing splice");
                     }
                 }
-                this.users.unshift();
+                this.users.unshift(this.user);
 
             })
         }
@@ -105,6 +112,7 @@ export class SandboxComponent2 {
     onEditClick(user){
         this.isEdit=true;
         this.user=user;
+        console.log("edit button clicked - onEditClick()");
     }
 
    
