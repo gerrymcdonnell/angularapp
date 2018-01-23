@@ -30,7 +30,7 @@ export class Sandbox3Component {
         //ex1
         //console.log(users);
         
-        //use data service
+        //use speechapp data service
         this.dataService.getWords().subscribe(words=>{
             this.words=words;
             console.log(this.words);

@@ -10,6 +10,10 @@ http://localhost/cake3restapi/words.json
         {{word.id}}
 
         {{word.wordtitle}}
+
+        <a [routerLink]="['/edit-word/'+word.id]" class="btn btn-secondary">Edit</a>
     </li>
 </ul>
 <p></p>
+
+

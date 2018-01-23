@@ -19,6 +19,7 @@ import { AboutComponent } from './components/about/about.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
 import { SpeechAppService } from './services/speechapp.service';
+import { EditwordComponent } from './components/editword/editword.component';
 
 
 //create routes for app
@@ -29,7 +30,8 @@ const appRoutes:Routes=[
   {path:'sandbox1',component:SandboxComponent},
   {path:'sandbox2',component:SandboxComponent2},
   {path:'sandbox3',component:Sandbox3Component},
-  {path:'user/:id',component:UserDetailsComponent}
+  {path:'user/:id',component:UserDetailsComponent},
+  {path:'edit-word/:id',component:EditwordComponent}  
 ]
 
 @NgModule({
@@ -42,7 +44,8 @@ const appRoutes:Routes=[
     AboutComponent,
     NavbarComponent,
     UserDetailsComponent,
-    Sandbox3Component
+    Sandbox3Component,
+    EditwordComponent
   ],
   imports: [
     BrowserModule,
