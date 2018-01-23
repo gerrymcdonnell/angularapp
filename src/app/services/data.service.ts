@@ -89,6 +89,7 @@ export class DataService{
     //added sJSON.stringify didnt seem to help
     updateUser(user){
         console.log("doing update via PUT request");
+        console.log(user);
         return this.http.put('http://jsonplaceholder.typicode.com/users/'+user.id, user)
             .map(res => console.log(res.json()));
     }

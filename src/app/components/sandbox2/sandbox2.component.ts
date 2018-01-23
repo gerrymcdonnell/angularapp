@@ -63,7 +63,7 @@ export class SandboxComponent2 {
         console.log("isEdit=" +isEdit);
 
         if(isEdit){
-            //edit user           
+            //edit user      
 
             this.dataService.updateUser(this.user).subscribe(user=>{
                 
@@ -78,7 +78,6 @@ export class SandboxComponent2 {
                     }
                 }
                 this.users.unshift(this.user);
-
             })
         }
         else{
@@ -87,10 +86,7 @@ export class SandboxComponent2 {
                 this.users.unshift();
                 console.log(user);
             })
-        }
-        
-        
-
+        }  
     }
 
 
