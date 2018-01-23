@@ -55,7 +55,7 @@ export class SpeechAppService{
         .map(res=>console.log("addword"+res.json()));
     }
 
-
+    //works
     deleteWord(id){
         return this.http.delete('http://localhost:80/cake3restapi/words/'+id+'.json')
         .map(res=>res.json());
