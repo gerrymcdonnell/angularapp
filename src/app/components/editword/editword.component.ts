@@ -6,6 +6,8 @@ import {SpeechAppService} from '../../services/speechapp.service';
 
 import {Router, ActivatedRoute, Params } from '@angular/router';
 
+import { FlashMessagesService } from 'angular2-flash-messages';
+
 @Component({
   selector: 'app-editword',
   templateUrl: './editword.component.html',
@@ -21,7 +23,8 @@ export class EditwordComponent implements OnInit {
   constructor(
     public dataService:SpeechAppService,
     public router:Router,
-    public route:ActivatedRoute
+    public route:ActivatedRoute,
+    public flashMessagesService:FlashMessagesService
 
   ) {
         //cross origin problem may occur due to backend i.e cakephp config
@@ -66,7 +69,15 @@ export class EditwordComponent implements OnInit {
                     console.log("doing splice");
                 }
             }
+
             this.words.unshift(this.word);
+            
+            //doest work
+            //this.flashMessagesService.show('Client updated', {cssClass:'alert-success', timeout: 4000});
+  
+            this.router.navigate(['/word-list/']);
+
+            
         })
     }
     else{

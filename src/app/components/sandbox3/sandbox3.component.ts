@@ -44,6 +44,23 @@ export class Sandbox3Component {
         
     }//end constructor
 
+
+
+    onDeleteClick(id){
+        this.dataService.deleteWord(id).subscribe(res=>{
+            console.log(res);
+            
+            //loop all users and find the one we just deleted
+            for(let i=0;i<this.words.length;i++){
+                if(this.words[i].id==id){
+                    //splice removes elements from an array
+                    this.words.splice(i,1);
+                }
+            }
+
+        })
+    }
+
     
 
 }

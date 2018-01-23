@@ -36,14 +36,33 @@ export class SpeechAppService{
     updateWord(word:Word){        
 
         console.log("doing update via PUT request");
-        //console.log('http://localhost/cake3restapi/words/'+id+'.json');
-
         console.log("edited word is"+word.wordtitle);
         console.log(word);
 
         return this.http.put('http://localhost:80/cake3restapi/words/'+word.id+'.json', word)
-            .map(res => console.log("update:"+res.json()));
+            .map(res => console.log("updateWord Result:"+res.json()));
     }
+
+
+    //broke
+    addWord(word:Word){
+        
+        console.log("doing Add via POST request");
+
+        console.log(word);
+        
+        return this.http.post('http://localhost:80/cake3restapi/words.json',word)
+        .map(res=>console.log("addword"+res.json()));
+    }
+
+
+    deleteWord(id){
+        return this.http.delete('http://localhost:80/cake3restapi/words/'+id+'.json')
+        .map(res=>res.json());
+    }
+
+
+
 
     
     
